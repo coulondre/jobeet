@@ -1,0 +1,30 @@
+{% extends 'CoulondreJobeetBundle::layout.html.twig' %}
+ 
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('bundles/coulondrejobeet/css/jobs.css') }}" type="text/css" media="all" />
+{% endblock %}
+{% block content %}
+ <div id="jobs">
+    {% for category in categories %}
+      <div>
+        <div class="category">
+          <div class="feed">
+            <a href="">Feed</a>
+          </div>
+		{{ category.slug }}
+          <h1>
+		<a href="{{ path('coulondre_jobeet_category', { 'slug': category.slug }) }}">{{ category.name }}</a>
+          </h1>
+        </div>
+	{% include 'CoulondreJobeetBundle:Job:list.html.twig' with {'jobs': category.activejobs} %} 
+	{% if category.morejobs %}
+	    <div class="more_jobs">
+	      and <a href="{{ path('coulondre_jobeet_category', { 'slug': category.slug }) }}">{{ category.morejobs }}</a>
+	      more...
+	    </div>
+	{% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

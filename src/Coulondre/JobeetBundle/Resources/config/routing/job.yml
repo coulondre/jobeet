@@ -1,0 +1,32 @@
+coulondre_job:
+    pattern:  /
+    defaults: { _controller: "CoulondreJobeetBundle:Job:index" }
+
+coulondre_job_show:
+    pattern:  /{company}/{location}/{id}/{position}
+    defaults: { _controller: "CoulondreJobeetBundle:Job:show" }
+    requirements:
+      id: \d+
+
+coulondre_job_new:
+    pattern:  /new
+    defaults: { _controller: "CoulondreJobeetBundle:Job:new" }
+
+coulondre_job_create:
+    pattern:  /create
+    defaults: { _controller: "CoulondreJobeetBundle:Job:create" }
+    requirements: { _method: post }
+
+coulondre_job_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "CoulondreJobeetBundle:Job:edit" }
+
+coulondre_job_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "CoulondreJobeetBundle:Job:update" }
+    requirements: { _method: post }
+
+coulondre_job_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "CoulondreJobeetBundle:Job:delete" }
+    requirements: { _method: post }

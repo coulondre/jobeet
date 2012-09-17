@@ -1,0 +1,7 @@
+parameters:
+#    coulondre_jobeet.example.class: Coulondre\JobeetBundle\Example
+
+services:
+#    coulondre_jobeet.example:
+#        class: %coulondre_jobeet.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

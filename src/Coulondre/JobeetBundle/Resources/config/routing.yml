@@ -1,0 +1,11 @@
+coulondre_jobeet_homepage:
+    pattern:  /
+    defaults: { _controller: CoulondreJobeetBundle:Job:index }
+
+coulondre_joobeet_job:
+    resource: "@CoulondreJobeetBundle/Resources/config/routing/job.yml"
+    prefix: /job
+
+coulondre_jobeet_category:
+    pattern: /category/{slug}/{page}
+    defaults: { _controller: CoulondreJobeetBundle:Category:show, page: 1 }
